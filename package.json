@@ -1,0 +1,35 @@
+{
+  "name": "sui-requirejs",
+  "version": "0.0.1",
+  "description": "sui and requireJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "sui",
+    "requireJS",
+    "gulp"
+  ],
+  "author": "junweiLu",
+  "license": "MIT",
+  "devDependencies": {
+    "amd-optimize": "^0.6.1",
+    "express": "*",
+    "gulp": "~3.9.0",
+    "gulp-clean": "~0.3.0",
+    "gulp-compile-handlebars": "^0.5.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-copy": "0.0.2",
+    "gulp-imagemin": "^2.2.1",
+    "gulp-minify-css": "~1.2.1",
+    "gulp-replace": "^0.5.4",
+    "gulp-rev": "^6.0.1",
+    "gulp-rev-collector": "^1.0.2",
+    "gulp-run-sequence": "^0.3.2",
+    "gulp-uglify": "^1.4.2",
+    "gulp-zip": "^3.0.2",
+    "http-proxy": "*",
+    "imagemin-jpegtran": "^4.3.1"
+  }
+}
