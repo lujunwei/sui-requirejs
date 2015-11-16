@@ -12,6 +12,7 @@ template 	放置所有html文件模板，基于gulp生成pages文件夹
 
 
 js写法示例，amd规范
+
 define([], function() {
   return View.extend({
   	events: {
@@ -34,7 +35,8 @@ define([], function() {
 });
 
 html写法示例 需要在.page 添加data-view="{{js}}"	js为绑定js文件的require路径
-<div class="page page-current" id="main-index" data-view="js/demos">
-</div>
+
+	<div class="page page-current" id="main-index" data-view="js/demos">
+	</div>
 
 如果js文件路径出现问题，请检查sui-requirejs的路径配置
