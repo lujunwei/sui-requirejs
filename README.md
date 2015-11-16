@@ -13,26 +13,26 @@ template 	放置所有html文件模板，基于gulp生成pages文件夹
 
 js写法示例，amd规范
 
-define([], function() {
-  return View.extend({
-  	events: {
-      "click #login": "onLogin",
-      "click #logout": "onLogout"
-    },
-    render: function() {	//初始化方法callback
+	define([], function() {
+	  return View.extend({
+	  	events: {
+	      "click #login": "onLogin",
+	      "click #logout": "onLogout"
+	    },
+	    render: function() {	//初始化方法callback
 
-    },
-    remove: function() {	//退出页面callback
+	    },
+	    remove: function() {	//退出页面callback
 
-    },
-    onLogin: function() {	//点击#login的回调
+	    },
+	    onLogin: function() {	//点击#login的回调
 
-    },
-    onLogout: function() {	//点击#logout的回调
+	    },
+	    onLogout: function() {	//点击#logout的回调
 
-    }
+	    }
+		});
 	});
-});
 
 html写法示例 需要在.page 添加data-view="{{js}}"	js为绑定js文件的require路径
 
