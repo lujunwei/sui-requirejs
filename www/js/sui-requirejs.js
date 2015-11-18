@@ -5,7 +5,8 @@ require.config({
     sm: '../lib/sui/js/sm.min',
     'smExtend': '../lib/sui/js/sm-extend.min',
     view: '../js/view',
-    js: '../../../js'
+    // 'js': '../../../js',  //hybrid app使用路径
+    'js': '/js'  //web server使用路径
   },
   shim: {
     'zepto': {
@@ -61,7 +62,7 @@ define('sui-requirejs', ['smExtend', 'view'], function() {
       }
 
       if (currentView && currentView.delegateEvents) { //绑定事件委托
-        currentView.delegateEvents(currentView.events, currentView.$el);
+        currentView.delegateEvents(currentView.events);
       }
     });
   }
@@ -85,7 +86,7 @@ define('sui-requirejs', ['smExtend', 'view'], function() {
       }
 
       if (view.delegateEvents) { //绑定事件
-        view.delegateEvents(view.events, view.$el);
+        view.delegateEvents(view.events);
       }
     } else {
       requireView(currentPage);

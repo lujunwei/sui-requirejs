@@ -1,6 +1,6 @@
 define(function() {
 	var view = function() {}
-	// 从underscore拷贝extend方法
+		// 从underscore拷贝extend方法
 	var ArrayProto = Array.prototype;
 	var slice = ArrayProto.slice;
 	var nativeForEach = ArrayProto.forEach;
@@ -24,8 +24,19 @@ define(function() {
 		}
 		return obj;
 	}
+	// 从别的对象扩展
+	view.prototype.extendOther = function(obj) {
+		each(slice.call(arguments, 1), function(source) {
+			if (source) {
+				for (var prop in source) {
+					obj[prop] = source[prop];
+				}
+			}
+		});
+		return obj;
+	};
 
-
+	// 从自身扩展
 	view.prototype.extend = function(obj) {
 		/*each(slice.call(arguments, 1), function(source) {
 			if (t) {
