@@ -44,12 +44,12 @@ gulp.task('rjs', ['copy'], function(cb) { //rjs合并模块
     console.log("You access complete stdout and stderr from here"); // stdout, stderr
     cb()
   });
- 
+
 
 });
 
 gulp.task('uglifyAll', ['rjs'], function() { //压缩合并js
-  return gulp.src(['./dist/js/sui-require.js','./dist/js/**.js'])
+  return gulp.src(['./dist/js/sui-require.js', './dist/js/**.js'])
     .pipe(concat('sui-requirejs.js'))
     .pipe(gulp.dest('./dist/js'))
     .pipe(uglify())
@@ -125,11 +125,11 @@ gulp.task('watch', function() { //监听模板变化
 });
 
 gulp.task('runSequence', function(cb) {
-  runSequence(['rev', 'imageMin'], 'revise','zip', cb);
+  runSequence(['rev', 'imageMin'], 'revise', 'zip', cb);
 });
 
 gulp.task('runSequenceAll', function(cb) {
-  runSequence(['revAll', 'imageMin'], 'revise','zip', cb);
+  runSequence(['revAll', 'imageMin'], 'revise', 'zip', cb);
 });
 
 gulp.task('rev', ['uglify', 'cssmin'], function() { //生成替换配置文件
@@ -153,7 +153,7 @@ gulp.task('revAll', ['uglifyAll'], function() { //生成替换配置文件
 });
 
 gulp.task('zip', function() { //压缩成zip
-  return gulp.src(['./dist/**/*', '!./dist/node_modules/**/*','!**/server.js'])
+  return gulp.src(['./dist/**/*', '!./dist/node_modules/**/*', '!**/server.js', '!./dist/template/**/*'])
     .pipe(zip('www.zip'))
     .pipe(gulp.dest('./dist'));
 });
