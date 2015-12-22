@@ -39,7 +39,7 @@ define('sui-requirejs', ['smExtend', 'view'], function() {
     if (currentPage) { //页面存在
       var bindingName = currentPage.attr("data-view"); //获得js的绑定路径
       //如果没写data-view，或无值，则默认使用与此html同名的js文件，例如pages/login.html js/login.js
-      if ( /*!bindingName || */ bindingName == '.' || bindingName == '') {
+      if (bindingName == '.' || bindingName == '') {
         var paths = window.location.pathname;
         var splitArr = paths.split("/");
         var currentPageName = splitArr[splitArr.length - 1]
@@ -81,6 +81,8 @@ define('sui-requirejs', ['smExtend', 'view'], function() {
     var view = getViewByBindName(bindingName);
 
     if (view) { //requirejs已经加载过了
+      // 重新绑定$el
+      view.$el = $.router.getCurrentPage();
       if (view.render) { //初始化
         view.render();
       }
